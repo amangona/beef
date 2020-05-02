@@ -9,8 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var isLoggedIn: Bool = false
+
+    @ViewBuilder
     var body: some View {
-        Text("Hello, World!")
+        if isLoggedIn {
+            BFTabView()
+        } else {
+            OnboardingView(isLoggedIn: $isLoggedIn)
+        }
     }
 }
 
