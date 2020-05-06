@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var isLoggedIn: Bool = false
+    @State var isLoggedIn: Bool
 
     @ViewBuilder
     var body: some View {
@@ -23,6 +23,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(isLoggedIn: false)
     }
 }

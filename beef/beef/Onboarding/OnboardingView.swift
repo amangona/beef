@@ -9,7 +9,11 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    
     @Binding var isLoggedIn: Bool
+    @State var showsAlert = false
+    @State var showModal: Bool = false
+    @State var showPhoneModal: Bool = false
     
     var body: some View {
         NavigationView() {
@@ -28,14 +32,41 @@ struct OnboardingView: View {
                         .multilineTextAlignment(.center)
                         .padding(.horizontal, 90.0)
                     Spacer()
-                    NavigationLink(destination: InterestsView(isLoggedIn: $isLoggedIn)) {
-                        OnboardingButton(title: "Get Started")
+                    SignInWithAppleToFirebase { response in
+                        switch response {
+                        case .success:
+                            if UserDefaults.standard.bool(forKey: "onboarded") {
+                                self.isLoggedIn.toggle()
+                            } else {
+                                self.showModal = true
+                            }
+                        case.error:
+                            self.showsAlert = true
+                        }
+                    }
+                    .frame(width: 240, height: 64)
+                    .foregroundColor(.red)
+                .cornerRadius(10)
+                    .background(RoundedRectangle(cornerRadius: 14).foregroundColor(.red))
+                    Button(action: {
+                        self.showPhoneModal.toggle()
+                    }) {
+                        OnboardingButton(title: "Phone")
                     }
                     Spacer()
                 }
 
             }.edgesIgnoringSafeArea(.all)
+            
         }
+        .sheet(isPresented: $showPhoneModal) {
+            PhoneAuthView(show: self.$showPhoneModal, showAlert: self.showsAlert, isLoggedIn: self.$isLoggedIn)
+        }
+        .alert(isPresented: self.$showsAlert) {
+            Alert(title: Text("Somthing when wrong 😩"))
+        }
+       .overlay(self.showModal ? InterestsView(isLoggedIn: $isLoggedIn) : nil)
+    
     }
 }
 

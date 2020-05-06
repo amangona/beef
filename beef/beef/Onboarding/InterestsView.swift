@@ -44,6 +44,7 @@ struct InterestsView: View {
             }
             .navigationBarItems(trailing:
                 Button("Skip") {
+                    UserDefaults.standard.set(true, forKey: "onboarded")
                     self.isLoggedIn.toggle()
                 }.foregroundColor(.white)
             )
