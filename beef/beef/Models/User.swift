@@ -1,26 +1,41 @@
-//import Foundation
-//
-//final class User: Codable {
-//    var id: UUID?
-//    var name: String
-//    var username: String
-//    
-//    init(id: UUID?, name: String, username: String) {
-//        self.id = id
-//        self.name = name
-//        self.username = username
-//    }
-//}
-//
-//final class CreateUser: Codable {
-//  var id: UUID?
-//  var name: String
-//  var username: String
-//  var password: String?
-//
-//  init(name: String, username: String, password: String) {
-//    self.name = name
-//    self.username = username
-//    self.password = password
-//  }
-//}
+import ObjectMapper
+import Firebase
+
+class User: Codable, Mappable {
+
+    var id: String?
+    var name: String?
+    var username: String?
+    var phoneNumber: String?
+    var userData: UserData?
+    var interests: [Interest]?
+    
+    init(id: String, name: String, username: String) {
+        self.id = id
+        self.name = name
+        self.username = username
+    }
+    
+    init(userData: UserData, id: String) {
+        self.id = id
+        self.userData = userData
+        self.name = userData.name.description
+        self.username = userData.displayName()
+    }
+    
+    init(id: String, phoneNumber: String) {
+        self.id = id
+        self.phoneNumber = phoneNumber
+    }
+    
+    required init?(map: Map) {}
+
+    func mapping(map: Map) {
+        id     <- map["id"]
+        name     <- map["name"]
+        username <- map["username"]
+        userData <- map["userData"]
+    }
+    
+}
+

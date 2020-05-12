@@ -1,9 +1,22 @@
 import Foundation
+import ObjectMapper
 
-struct Interest: Identifiable {
-    var id: String = UUID().uuidString
-    var name: String
+struct Interest: Identifiable, Codable, Mappable {
+
+    var id: String?
+    var name: String?
     var selected: Bool = false
+    
+    init(name: String) {
+        self.name = name
+    }
+    init?(map: Map) {}
+    
+    mutating func mapping(map: Map) {
+        id <- map["id"]
+        name <- map["name"]
+        selected <- map["selected"]
+    }
 }
 
 extension Interest {

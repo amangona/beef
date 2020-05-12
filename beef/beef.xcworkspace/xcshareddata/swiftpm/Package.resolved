@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ObjectMapper",
+        "repositoryURL": "https://github.com/tristanhimmelman/ObjectMapper.git",
+        "state": {
+          "branch": null,
+          "revision": "8b69860cc62987a778d5e0bd7db50268ba9596d3",
+          "version": "3.5.2"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

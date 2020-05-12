@@ -13,11 +13,12 @@ struct ContentView: View {
 
     @ViewBuilder
     var body: some View {
-        if isLoggedIn {
-            BFTabView()
-        } else {
-            OnboardingView(isLoggedIn: $isLoggedIn)
-        }
+        AuthView()
+//        if isLoggedIn {
+//            BFTabView()
+//        } else {
+//            OnboardingView(isLoggedIn: $isLoggedIn)
+//        }
     }
 }
 

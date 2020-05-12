@@ -28,8 +28,16 @@ struct PhoneVerificationView: View {
                         if error != nil {
                             self.showAlert.toggle()
                         } else {
-                            self.completed.toggle()
-                            self.isLoggedIn.toggle()
+//                            BFAuthentication.shared.createUser { (completed) in
+//                                if completed {
+//                                    self.completed.toggle()
+//                                    self.isLoggedIn.toggle()
+//                                } else {
+//                                    print("COULD NOT COMPETE PHONE AUTH")
+//                                }
+//                                
+//                            }
+                            
                         }
                     }
                 }) {

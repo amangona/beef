@@ -12,5 +12,6 @@ target 'beef' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'FirebaseFirestoreSwift'
+  pod 'ObjectMapper', '~> 3.5'
 
 end

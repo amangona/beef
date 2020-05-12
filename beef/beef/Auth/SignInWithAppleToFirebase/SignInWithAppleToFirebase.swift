@@ -120,7 +120,7 @@ class SignInWithAppleDelegates: NSObject {
 }
 
 extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
-    func firebaseLogin(credential: ASAuthorizationAppleIDCredential) {
+    func firebaseLogin(credential: ASAuthorizationAppleIDCredential, userData: UserData? = nil) {
         // 3
         guard let nonce = currentNonce else {
           fatalError("Invalid state: A login callback was received, but no login request was sent.")
@@ -148,8 +148,17 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
                 return
             }
             // User is signed in to Firebase with Apple.
-            print("you're in")
-            self.onLoginEvent?(.success)
+        
+//            if let data = userData {
+//                BFAuthentication.shared.createUser(with: data) { completed in
+//                    if completed {
+//                       self.onLoginEvent?(.success)
+//                    } else {
+//                        self.onLoginEvent?(.error)
+//                    }
+//                }
+//            }
+
         }
     }
     private func registerNewAccount(credential: ASAuthorizationAppleIDCredential) {
@@ -197,5 +206,11 @@ extension SignInWithAppleDelegates: ASAuthorizationControllerDelegate {
 extension SignInWithAppleDelegates: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.window
+    }
+}
+
+struct SignInWithAppleToFirebase_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
