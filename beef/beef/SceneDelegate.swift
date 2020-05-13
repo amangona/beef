@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         // Change this to Auth.auth().currentUser == nil to test onboarding
-        let contentView = ContentView(isLoggedIn: Auth.auth().currentUser != nil)
+        let authSetting = AuthSettings()
+        let contentView = ContentView().environmentObject(authSetting)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

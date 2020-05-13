@@ -25,6 +25,8 @@
 		1977F4D3246B4FA30005BA22 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977F4D2246B4FA30005BA22 /* LoginView.swift */; };
 		1977F4D5246B51730005BA22 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977F4D4246B51730005BA22 /* SignupView.swift */; };
 		1977F4D7246B62C70005BA22 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977F4D6246B62C70005BA22 /* PagerView.swift */; };
+		1977F4DA246B70970005BA22 /* AuthSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977F4D9246B70970005BA22 /* AuthSettings.swift */; };
+		1977F4DD246B7AC00005BA22 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977F4DC246B7AC00005BA22 /* ProfileView.swift */; };
 		199D85B22460A11700C25C55 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85B12460A11700C25C55 /* AuthView.swift */; };
 		199D85B42460A1AC00C25C55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85B32460A1AC00C25C55 /* User.swift */; };
 		199D85B62460A28B00C25C55 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85B52460A28B00C25C55 /* API.swift */; };
@@ -80,6 +82,8 @@
 		1977F4D2246B4FA30005BA22 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		1977F4D4246B51730005BA22 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		1977F4D6246B62C70005BA22 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
+		1977F4D9246B70970005BA22 /* AuthSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettings.swift; sourceTree = "<group>"; };
+		1977F4DC246B7AC00005BA22 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		199D85B12460A11700C25C55 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		199D85B32460A1AC00C25C55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		199D85B52460A28B00C25C55 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				199D85C92460F2B600C25C55 /* beef.entitlements */,
+				1977F4DB246B7A930005BA22 /* Profile */,
+				1977F4D8246B70750005BA22 /* Environment */,
 				199D85BC2460B56800C25C55 /* Utilities */,
 				199D85B72460A29B00C25C55 /* Services */,
 				199D85B02460A07400C25C55 /* Auth */,
@@ -188,6 +194,22 @@
 				199D85BA2460A3DF00C25C55 /* Token.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1977F4D8246B70750005BA22 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				1977F4D9246B70970005BA22 /* AuthSettings.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		1977F4DB246B7A930005BA22 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				1977F4DC246B7AC00005BA22 /* ProfileView.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		199D85B02460A07400C25C55 /* Auth */ = {
@@ -398,6 +420,7 @@
 				19685934245CC2D600FC9E9B /* OnboardingView.swift in Sources */,
 				199D85B22460A11700C25C55 /* AuthView.swift in Sources */,
 				19685938245CD8C600FC9E9B /* InterestView.swift in Sources */,
+				1977F4DA246B70970005BA22 /* AuthSettings.swift in Sources */,
 				199D85B92460A38800C25C55 /* AuthViewModel.swift in Sources */,
 				199D85C82460DBD500C25C55 /* SessionStore.swift in Sources */,
 				19E820DD245CEE7800A47F91 /* InterestsScrollView.swift in Sources */,
@@ -416,6 +439,7 @@
 				19E820DB245CE8E500A47F91 /* OnboardingButton.swift in Sources */,
 				199D85C02460B5D700C25C55 /* ResourceRequest.swift in Sources */,
 				194947162440F8D9009C2BAE /* SceneDelegate.swift in Sources */,
+				1977F4DD246B7AC00005BA22 /* ProfileView.swift in Sources */,
 				199D85D82461D73900C25C55 /* SharedWebCredential.swift in Sources */,
 				1977F4D5246B51730005BA22 /* SignupView.swift in Sources */,
 				194947182440F8D9009C2BAE /* ContentView.swift in Sources */,

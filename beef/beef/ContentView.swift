@@ -9,11 +9,15 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var isLoggedIn: Bool
-
-    @ViewBuilder
+//    @State var isLoggedIn: Bool
+    @EnvironmentObject var settings: AuthSettings
+//    @ViewBuilder
     var body: some View {
-        AuthView()
+        BFTabView().sheet(isPresented: $settings.showAuthView) {
+            AuthView().environmentObject(self.settings)
+        }
+
+//        AuthView()
 //        if isLoggedIn {
 //            BFTabView()
 //        } else {
@@ -24,6 +28,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(isLoggedIn: false)
+        ContentView()
     }
 }
+

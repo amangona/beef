@@ -1,21 +1,15 @@
-//
-//  AuthView.swift
-//  beef
-//
-//  Created by abe on 5/4/20.
-//  Copyright © 2020 thoughtbot. All rights reserved.
-//
 
 import SwiftUI
 
 struct AuthView: View {
     //    @ObservedObject var viewModel = AuthViewModel()
+    @EnvironmentObject var settings: AuthSettings
     @State var currentPage = 0
     
     var body: some View {
         VStack {
             Button(action: {
-                print("handle closing..")
+                self.settings.showAuthView = false
             }) {
                 HStack {
                     Image("close")
@@ -31,14 +25,6 @@ struct AuthView: View {
                 SignupView(currentPage: $currentPage)
                 LoginView(currentPage: $currentPage)
             }
-            //                HStack() {
-            //
-            //                    SignupView()
-            //                        .position(x: geometry.size.width/2, y: geometry.size.height/2)
-            //                    LoginView()
-            //                        .position(x: geometry.size.width)
-            //
-            //                }
         }
         .edgesIgnoringSafeArea(.all)
     }

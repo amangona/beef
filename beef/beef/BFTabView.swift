@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct BFTabView: View {
+    @EnvironmentObject var settings: AuthSettings
+    
     var body: some View {
         TabView {
             Text("Beef")
@@ -31,7 +33,8 @@ struct BFTabView: View {
                     Image(systemName: "4.circle")
                     Text("Search")
             }.tag(4)
-            Text("Profile")
+            ProfileView()
+                .environmentObject(settings)
                 .tabItem {
                     Image(systemName: "5.circle")
                     Text("Profile")
