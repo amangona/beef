@@ -7,9 +7,11 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct LoginView: View {
     @Binding var currentPage: Int
+    var viewStore: ViewStore<AppState, AppAction>?
     
     var body: some View {
         VStack {
@@ -25,10 +27,10 @@ struct LoginView: View {
                 .padding(.horizontal, 38.0)
             
             VStack {
-                AuthButton(authType: .snapchat)
-                AuthButton(authType: .apple)
-                AuthButton(authType: .twitter)
-                AuthButton(authType: .phone)
+                AuthButton(authType: .snapchat, viewStore: viewStore)
+                AuthButton(authType: .apple, viewStore: viewStore)
+                AuthButton(authType: .twitter, viewStore: viewStore)
+                AuthButton(authType: .phone, viewStore: viewStore)
             }
             //TO DO: Replace bottom view with empty view of right spacing
             VStack {
@@ -58,7 +60,7 @@ struct LoginView: View {
             .padding([.top, .trailing], 20.0)
             .background(Color.gray)
         }
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

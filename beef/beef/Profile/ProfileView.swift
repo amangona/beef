@@ -7,18 +7,41 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
-struct ProfileView: View {
-    @EnvironmentObject var settings: AuthSettings
+struct ProfileView: View {    
+    let store: Store<AppState, AppAction>
+    
     var body: some View {
-        Button("Sign up") {
-            self.settings.showAuthView = true
+        WithViewStore(self.store) { viewStore in
+            Button("Sign up") {
+                viewStore.send(.someAction)
+            }
         }
+        //        HStack {
+        //            Button("Sign up") {
+        //
+        ////                self.settings.wrappedValue.showAuthView = true
+        //
+        //            }
+        //            Text("Protected")
+        //            .titleStyle()
+        //
+        ////            Button("Sign up2") {
+        ////                self.settings2.showAuthView = true
+        ////            }
+        //        }
+        
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileView(
+            store: Store(
+                initialState: AppState(),
+                reducer: appReducer,
+                environment: AppEnvironment())
+        )
     }
 }

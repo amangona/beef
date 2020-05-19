@@ -1,34 +1,36 @@
-//
-//  ContentView.swift
-//  beef
-//
-//  Created by abe on 4/10/20.
-//  Copyright © 2020 thoughtbot. All rights reserved.
-//
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
+    let store: Store<AppState, AppAction>
 //    @State var isLoggedIn: Bool
-    @EnvironmentObject var settings: AuthSettings
+//    @EnvironmentObject var settings: AuthSettings
 //    @ViewBuilder
     var body: some View {
-        BFTabView().sheet(isPresented: $settings.showAuthView) {
-            AuthView().environmentObject(self.settings)
+        WithViewStore(self.store) { viewStore in
+            BFTabView(store: self.store)
+                .sheet(isPresented: viewStore.binding(get: { $0.showAuth
+                }, send: .authenticate), onDismiss: {
+                    if viewStore.showAuth {
+                        // toggles if still showing is there
+                        viewStore.send(.someAction)
+                    }
+                }, content: {
+                    AuthView(viewStore: viewStore)
+                })
         }
-
-//        AuthView()
-//        if isLoggedIn {
-//            BFTabView()
-//        } else {
-//            OnboardingView(isLoggedIn: $isLoggedIn)
-//        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(
+            store: Store(
+            initialState: AppState(),
+            reducer: appReducer,
+            environment: AppEnvironment())
+        )
     }
 }
 

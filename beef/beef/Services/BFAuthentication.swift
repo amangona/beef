@@ -20,6 +20,39 @@ class BFAuthentication {
         }
     }
     
+    func auth(with type: AuthType, completion: @escaping () -> ()) {
+        switch type {
+        case .apple:
+            appleAuth {
+                completion()
+            }
+        case .phone:
+            phoneAuth {
+                completion()
+            }
+        case .snapchat:
+            snapchatAuth {
+                completion()
+            }
+        case .twitter:
+            twitterAuth {
+                completion()
+            }
+      }
+    }
+    func appleAuth(completion: @escaping () -> ()) {
+        completion()
+    }
+    func phoneAuth(completion: @escaping () -> ()) {
+        completion()
+    }
+    func snapchatAuth(completion: @escaping () -> ()) {
+        completion()
+    }
+    func twitterAuth(completion: @escaping () -> ()) {
+       completion()
+    }
+        
 //    func createUser(with userData: UserData, completion: @escaping ((Bool)-> ())) {
 //        guard let id = Auth.auth().currentUser?.uid else {
 //            completion(false)

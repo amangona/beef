@@ -7,10 +7,12 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct SignupView: View {
     @Binding var currentPage: Int
-
+    var viewStore: ViewStore<AppState, AppAction>?
+    
     var body: some View {
         VStack {
             Text("Sign up for Beef")
@@ -24,10 +26,10 @@ struct SignupView: View {
                 .padding(.horizontal, 38.0)
             
             VStack {
-                AuthButton(authType: .snapchat)
-                AuthButton(authType: .apple)
-                AuthButton(authType: .twitter)
-                AuthButton(authType: .phone)
+                AuthButton(authType: .snapchat, viewStore: viewStore)
+                AuthButton(authType: .apple, viewStore: viewStore)
+                AuthButton(authType: .twitter, viewStore: viewStore)
+                AuthButton(authType: .phone, viewStore: viewStore)
             }
             VStack {
                 Text("By continuing, you agree to Beef's ")
@@ -56,7 +58,7 @@ struct SignupView: View {
             .padding([.top, .trailing], 20.0)
             .background(Color.gray)
         }
-        .edgesIgnoringSafeArea(.all)
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

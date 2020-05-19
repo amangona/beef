@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -44,6 +44,11 @@
 		199D85D92461D73900C25C55 /* SignInWithAppleToFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85D42461D73900C25C55 /* SignInWithAppleToFirebase.swift */; };
 		199D85DE2462023C00C25C55 /* PhoneAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85DD2462023C00C25C55 /* PhoneAuthView.swift */; };
 		199D85E0246208B900C25C55 /* PhoneVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85DF246208B900C25C55 /* PhoneVerificationView.swift */; };
+		19C4DA612473204C00F5893E /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 19C4DA602473204C00F5893E /* ComposableArchitecture */; };
+		19C4DA64247320DA00F5893E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4DA63247320DA00F5893E /* AppState.swift */; };
+		19C4DA662473212100F5893E /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4DA652473212100F5893E /* AppAction.swift */; };
+		19C4DA682473219C00F5893E /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4DA672473219C00F5893E /* AppEnvironment.swift */; };
+		19C4DA6A2473276C00F5893E /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4DA692473276C00F5893E /* AppReducer.swift */; };
 		19E820DB245CE8E500A47F91 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E820DA245CE8E500A47F91 /* OnboardingButton.swift */; };
 		19E820DD245CEE7800A47F91 /* InterestsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E820DC245CEE7800A47F91 /* InterestsScrollView.swift */; };
 		19E820DF245D088800A47F91 /* BFTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E820DE245D088800A47F91 /* BFTabView.swift */; };
@@ -102,6 +107,10 @@
 		199D85D42461D73900C25C55 /* SignInWithAppleToFirebase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInWithAppleToFirebase.swift; sourceTree = "<group>"; };
 		199D85DD2462023C00C25C55 /* PhoneAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneAuthView.swift; sourceTree = "<group>"; };
 		199D85DF246208B900C25C55 /* PhoneVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationView.swift; sourceTree = "<group>"; };
+		19C4DA63247320DA00F5893E /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		19C4DA652473212100F5893E /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		19C4DA672473219C00F5893E /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		19C4DA692473276C00F5893E /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		19E820DA245CE8E500A47F91 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
 		19E820DC245CEE7800A47F91 /* InterestsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsScrollView.swift; sourceTree = "<group>"; };
 		19E820DE245D088800A47F91 /* BFTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFTabView.swift; sourceTree = "<group>"; };
@@ -115,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19C4DA612473204C00F5893E /* ComposableArchitecture in Frameworks */,
 				1967309E2469C254002AE37D /* Pods_beef.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +154,9 @@
 			isa = PBXGroup;
 			children = (
 				199D85C92460F2B600C25C55 /* beef.entitlements */,
+				194947132440F8D9009C2BAE /* AppDelegate.swift */,
+				194947152440F8D9009C2BAE /* SceneDelegate.swift */,
+				19C4DA62247320AB00F5893E /* State */,
 				1977F4DB246B7A930005BA22 /* Profile */,
 				1977F4D8246B70750005BA22 /* Environment */,
 				199D85BC2460B56800C25C55 /* Utilities */,
@@ -151,8 +164,6 @@
 				199D85B02460A07400C25C55 /* Auth */,
 				1968593D245CE0DE00FC9E9B /* Models */,
 				19685932245CA6D500FC9E9B /* Onboarding */,
-				194947132440F8D9009C2BAE /* AppDelegate.swift */,
-				194947152440F8D9009C2BAE /* SceneDelegate.swift */,
 				194947172440F8D9009C2BAE /* ContentView.swift */,
 				194947192440F8DB009C2BAE /* Assets.xcassets */,
 				1949471E2440F8DB009C2BAE /* LaunchScreen.storyboard */,
@@ -275,6 +286,17 @@
 			path = SigninWithPhone;
 			sourceTree = "<group>";
 		};
+		19C4DA62247320AB00F5893E /* State */ = {
+			isa = PBXGroup;
+			children = (
+				19C4DA63247320DA00F5893E /* AppState.swift */,
+				19C4DA652473212100F5893E /* AppAction.swift */,
+				19C4DA672473219C00F5893E /* AppEnvironment.swift */,
+				19C4DA692473276C00F5893E /* AppReducer.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		5D74A09619CCABBB3C87F6AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,6 +334,7 @@
 			);
 			name = beef;
 			packageProductDependencies = (
+				19C4DA602473204C00F5893E /* ComposableArchitecture */,
 			);
 			productName = beef;
 			productReference = 194947102440F8D9009C2BAE /* beef.app */;
@@ -342,6 +365,7 @@
 			);
 			mainGroup = 194947072440F8D9009C2BAE;
 			packageReferences = (
+				19C4DA5F2473204C00F5893E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 194947112440F8D9009C2BAE /* Products */;
 			projectDirPath = "";
@@ -426,9 +450,11 @@
 				19E820DD245CEE7800A47F91 /* InterestsScrollView.swift in Sources */,
 				199D85D62461D73900C25C55 /* UserDataKeychain.swift in Sources */,
 				199D85BE2460B58C00C25C55 /* Auth.swift in Sources */,
+				19C4DA662473212100F5893E /* AppAction.swift in Sources */,
 				199D85D52461D73900C25C55 /* UserData.swift in Sources */,
 				199D85D72461D73900C25C55 /* Keychain.swift in Sources */,
 				199D85BB2460A3DF00C25C55 /* Token.swift in Sources */,
+				19C4DA64247320DA00F5893E /* AppState.swift in Sources */,
 				199D85E0246208B900C25C55 /* PhoneVerificationView.swift in Sources */,
 				199D85B62460A28B00C25C55 /* API.swift in Sources */,
 				1968593A245CDF4E00FC9E9B /* InterestsCollectionView.swift in Sources */,
@@ -439,6 +465,7 @@
 				19E820DB245CE8E500A47F91 /* OnboardingButton.swift in Sources */,
 				199D85C02460B5D700C25C55 /* ResourceRequest.swift in Sources */,
 				194947162440F8D9009C2BAE /* SceneDelegate.swift in Sources */,
+				19C4DA682473219C00F5893E /* AppEnvironment.swift in Sources */,
 				1977F4DD246B7AC00005BA22 /* ProfileView.swift in Sources */,
 				199D85D82461D73900C25C55 /* SharedWebCredential.swift in Sources */,
 				1977F4D5246B51730005BA22 /* SignupView.swift in Sources */,
@@ -446,6 +473,7 @@
 				199D85DE2462023C00C25C55 /* PhoneAuthView.swift in Sources */,
 				19685936245CCAFC00FC9E9B /* InterestsView.swift in Sources */,
 				1977F4D1246B35740005BA22 /* AuthType.swift in Sources */,
+				19C4DA6A2473276C00F5893E /* AppReducer.swift in Sources */,
 				1968593C245CDFCD00FC9E9B /* Interest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,6 +676,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		19C4DA5F2473204C00F5893E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		19C4DA602473204C00F5893E /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19C4DA5F2473204C00F5893E /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 194947082440F8D9009C2BAE /* Project object */;
 }

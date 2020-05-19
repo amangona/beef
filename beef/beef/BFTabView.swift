@@ -1,22 +1,18 @@
-//
-//  BFTabView.swift
-//  beef
-//
-//  Created by abe on 5/1/20.
-//  Copyright © 2020 thoughtbot. All rights reserved.
-//
 
 import SwiftUI
+import ComposableArchitecture
 
 struct BFTabView: View {
-    @EnvironmentObject var settings: AuthSettings
+    //    @EnvironmentObject var settings: AuthSettings
+    let store: Store<AppState, AppAction>
     
     var body: some View {
         TabView {
-            Text("Beef")
+            ProfileView(store: store)
                 .tabItem {
-                    Image(systemName: "1.circle")
-                    Text("Beef")
+                    Image(systemName: "5.circle")
+                    Text("Profile")
+                    
             }.tag(0)
             Text("Search")
                 .tabItem {
@@ -33,11 +29,10 @@ struct BFTabView: View {
                     Image(systemName: "4.circle")
                     Text("Search")
             }.tag(4)
-            ProfileView()
-                .environmentObject(settings)
+            Text("Beef")
                 .tabItem {
-                    Image(systemName: "5.circle")
-                    Text("Profile")
+                    Image(systemName: "1.circle")
+                    Text("Beef")
             }.tag(5)
         }
     }
@@ -45,6 +40,10 @@ struct BFTabView: View {
 
 struct BFTabView_Previews: PreviewProvider {
     static var previews: some View {
-        BFTabView()
+        BFTabView(store: Store(
+        initialState: AppState(),
+        reducer: appReducer,
+        environment: AppEnvironment())
+        )
     }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import FirebaseAuth
+import ComposableArchitecture
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,7 +19,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Change this to Auth.auth().currentUser == nil to test onboarding
         let authSetting = AuthSettings()
-        let contentView = ContentView().environmentObject(authSetting)
+        let contentView = ContentView(
+            store: Store(
+            initialState: AppState(),
+            reducer: appReducer,
+            environment: AppEnvironment())
+        )
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
