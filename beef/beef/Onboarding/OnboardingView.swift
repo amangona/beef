@@ -60,7 +60,7 @@ struct OnboardingView: View {
             
         }
         .sheet(isPresented: $showPhoneModal) {
-            PhoneAuthView(show: self.$showPhoneModal, showAlert: self.showsAlert, isLoggedIn: self.$isLoggedIn)
+            PhoneAuthView()
         }
         .alert(isPresented: self.$showsAlert) {
             Alert(title: Text("Somthing when wrong 😩"))

@@ -12,10 +12,15 @@ import ComposableArchitecture
 struct AuthButton: View {
     var authType: AuthType
     var viewStore: ViewStore<AppState, AppAction>?
+    var action: (() -> ())?
     
     var body: some View {
         Button(action: {
-            self.viewStore?.send(.auth(type: self.authType))
+            if self.authType == .phone {
+                self.action?()
+            } else {
+                self.viewStore?.send(.auth(type: self.authType))
+            } 
         }) {
             HStack {
                 self.authType.image

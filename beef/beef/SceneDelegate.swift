@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import SwiftUI
-import FirebaseAuth
-import ComposableArchitecture
+//import SwiftUI
+//import FirebaseAuth
+//import ComposableArchitecture
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,21 +18,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         // Change this to Auth.auth().currentUser == nil to test onboarding
-        let authSetting = AuthSettings()
-        let contentView = ContentView(
-            store: Store(
-            initialState: AppState(),
-            reducer: appReducer,
-            environment: AppEnvironment())
-        )
-
-        // Use a UIHostingController as window root view controller.
-        if let windowScene = scene as? UIWindowScene {
-            let window = UIWindow(windowScene:  windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
-            self.window = window
-            window.makeKeyAndVisible()
-        }
+        
+         // Change this to Auth.auth().currentUser == nil to test onboarding
+//               let authSetting = AuthSettings()
+//               let contentView = ContentView(
+//                   store: Store(
+//                   initialState: AppState(),
+//                   reducer: appReducer,
+//                   environment: AppEnvironment())
+//               )
+//
+               // Use a UIHostingController as window root view controller.
+//               if let windowScene = scene as? UIWindowScene {
+//                   let window = UIWindow(windowScene:  windowScene)
+//                window.rootViewController = HostController(rootView: <#T##ContentView#>)
+////                    UIHostingController(rootView: contentView)
+//                   self.window = window
+//                   window.makeKeyAndVisible()
+//               }
+        
+        guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

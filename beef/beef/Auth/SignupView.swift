@@ -12,7 +12,7 @@ import ComposableArchitecture
 struct SignupView: View {
     @Binding var currentPage: Int
     var viewStore: ViewStore<AppState, AppAction>?
-    
+    @Binding var showPhoneAuth: Bool
     var body: some View {
         VStack {
             Text("Sign up for Beef")
@@ -29,7 +29,9 @@ struct SignupView: View {
                 AuthButton(authType: .snapchat, viewStore: viewStore)
                 AuthButton(authType: .apple, viewStore: viewStore)
                 AuthButton(authType: .twitter, viewStore: viewStore)
-                AuthButton(authType: .phone, viewStore: viewStore)
+                AuthButton(authType: .phone, viewStore: viewStore) {
+                    self.showPhoneAuth.toggle()
+                }
             }
             VStack {
                 Text("By continuing, you agree to Beef's ")
@@ -64,6 +66,6 @@ struct SignupView: View {
 
 struct SignupView_Previews: PreviewProvider {
     static var previews: some View {
-        SignupView(currentPage: .constant(0))
+        SignupView(currentPage: .constant(0), showPhoneAuth: .constant(false))
     }
 }

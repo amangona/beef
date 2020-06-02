@@ -6,6 +6,7 @@ struct AuthView: View {
     //    @ObservedObject var viewModel = AuthViewModel()
 //    @EnvironmentObject var settings: AuthSettings
     @State var currentPage = 0
+    @State var showPhoneAuth: Bool = false
     var viewStore: ViewStore<AppState, AppAction>?
     @Environment (\.presentationMode) var presentationMode
     var body: some View {
@@ -25,8 +26,11 @@ struct AuthView: View {
 //                    .padding(.top, 28.0)
 //                    .padding()
 //                }
+                NavigationLink(destination: PhoneAuthView(viewStore: viewStore), isActive: $showPhoneAuth) {
+                    EmptyView()
+                }
                 PagerView(pageCount: 2, currentIndex: self.$currentPage) {
-                    SignupView(currentPage: $currentPage, viewStore: viewStore)
+                    SignupView(currentPage: $currentPage, viewStore: viewStore, showPhoneAuth: $showPhoneAuth)
                     LoginView(currentPage: $currentPage, viewStore: viewStore)
                 }
                 Spacer()
