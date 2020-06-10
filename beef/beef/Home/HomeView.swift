@@ -58,7 +58,7 @@ struct HomeView: View {
                         .font(.system(size: 34))
                         .fontWeight(.medium)
                         .foregroundColor(Color("titleColor"))
-                        .padding(screen.width/4+30)
+                        .padding(screen.width/3.5)
                 }
                 ,
                                 trailing:

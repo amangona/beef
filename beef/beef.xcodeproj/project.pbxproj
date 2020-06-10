@@ -29,8 +29,13 @@
 		1977F4D7246B62C70005BA22 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977F4D6246B62C70005BA22 /* PagerView.swift */; };
 		1977F4DA246B70970005BA22 /* AuthSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977F4D9246B70970005BA22 /* AuthSettings.swift */; };
 		1977F4DD246B7AC00005BA22 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1977F4DC246B7AC00005BA22 /* ProfileView.swift */; };
+		19796F3924915C5E008803A6 /* BeefCaontactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19796F3824915C5E008803A6 /* BeefCaontactsView.swift */; };
+		19796F3C24915FC4008803A6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19796F3B24915FC4008803A6 /* SearchBar.swift */; };
+		1980C5162490131600F96C37 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980C5152490131600F96C37 /* MessagesView.swift */; };
+		1980C518249023BE00F96C37 /* CreateBeefView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1980C517249023BE00F96C37 /* CreateBeefView.swift */; };
 		199C5AD92486EA31006F9A60 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C5AD82486EA31006F9A60 /* View+Extension.swift */; };
 		199C5ADB2486EDE3006F9A60 /* PointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C5ADA2486EDE3006F9A60 /* PointView.swift */; };
+		199C5ADD2486FB73006F9A60 /* BeefDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C5ADC2486FB73006F9A60 /* BeefDetailController.swift */; };
 		199D85B22460A11700C25C55 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85B12460A11700C25C55 /* AuthView.swift */; };
 		199D85B42460A1AC00C25C55 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85B32460A1AC00C25C55 /* User.swift */; };
 		199D85B62460A28B00C25C55 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199D85B52460A28B00C25C55 /* API.swift */; };
@@ -103,8 +108,13 @@
 		1977F4D6246B62C70005BA22 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		1977F4D9246B70970005BA22 /* AuthSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSettings.swift; sourceTree = "<group>"; };
 		1977F4DC246B7AC00005BA22 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		19796F3824915C5E008803A6 /* BeefCaontactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeefCaontactsView.swift; sourceTree = "<group>"; };
+		19796F3B24915FC4008803A6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		1980C5152490131600F96C37 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		1980C517249023BE00F96C37 /* CreateBeefView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBeefView.swift; sourceTree = "<group>"; };
 		199C5AD82486EA31006F9A60 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 		199C5ADA2486EDE3006F9A60 /* PointView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointView.swift; sourceTree = "<group>"; };
+		199C5ADC2486FB73006F9A60 /* BeefDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeefDetailController.swift; sourceTree = "<group>"; };
 		199D85B12460A11700C25C55 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		199D85B32460A1AC00C25C55 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		199D85B52460A28B00C25C55 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -180,8 +190,10 @@
 				199D85C92460F2B600C25C55 /* beef.entitlements */,
 				194947132440F8D9009C2BAE /* AppDelegate.swift */,
 				194947152440F8D9009C2BAE /* SceneDelegate.swift */,
+				19796F3A24915FA8008803A6 /* Views */,
 				199C5AD72486EA18006F9A60 /* Extensions */,
 				19A8C971247C578900285856 /* Home */,
+				1980C514249012CC00F96C37 /* Messages */,
 				19C4DA62247320AB00F5893E /* State */,
 				1977F4DB246B7A930005BA22 /* Profile */,
 				1977F4D8246B70750005BA22 /* Environment */,
@@ -251,6 +263,24 @@
 				1977F4DC246B7AC00005BA22 /* ProfileView.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		19796F3A24915FA8008803A6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19796F3B24915FC4008803A6 /* SearchBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1980C514249012CC00F96C37 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				1980C5152490131600F96C37 /* MessagesView.swift */,
+				1980C517249023BE00F96C37 /* CreateBeefView.swift */,
+				19796F3824915C5E008803A6 /* BeefCaontactsView.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 		199C5AD72486EA18006F9A60 /* Extensions */ = {
@@ -332,6 +362,7 @@
 				19A8C976247C679100285856 /* BeefCardView.swift */,
 				19A8C97E247C802600285856 /* BeefView.swift */,
 				199C5ADA2486EDE3006F9A60 /* PointView.swift */,
+				199C5ADC2486FB73006F9A60 /* BeefDetailController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -505,6 +536,7 @@
 				199D85C82460DBD500C25C55 /* SessionStore.swift in Sources */,
 				19E820DD245CEE7800A47F91 /* InterestsScrollView.swift in Sources */,
 				199D85D62461D73900C25C55 /* UserDataKeychain.swift in Sources */,
+				19796F3C24915FC4008803A6 /* SearchBar.swift in Sources */,
 				199D85BE2460B58C00C25C55 /* Auth.swift in Sources */,
 				19A8C975247C58D400285856 /* BFService.swift in Sources */,
 				19A8C973247C57B000285856 /* HomeView.swift in Sources */,
@@ -516,12 +548,15 @@
 				199D85BB2460A3DF00C25C55 /* Token.swift in Sources */,
 				19C4DA64247320DA00F5893E /* AppState.swift in Sources */,
 				199C5AD92486EA31006F9A60 /* View+Extension.swift in Sources */,
+				19796F3924915C5E008803A6 /* BeefCaontactsView.swift in Sources */,
 				199D85E0246208B900C25C55 /* PhoneVerificationView.swift in Sources */,
 				19A8C981247C91FA00285856 /* Constants.swift in Sources */,
 				199D85B62460A28B00C25C55 /* API.swift in Sources */,
 				1968593A245CDF4E00FC9E9B /* InterestsCollectionView.swift in Sources */,
 				1977F4D3246B4FA30005BA22 /* LoginView.swift in Sources */,
 				19A8C970247C39EA00285856 /* Beef.swift in Sources */,
+				1980C518249023BE00F96C37 /* CreateBeefView.swift in Sources */,
+				199C5ADD2486FB73006F9A60 /* BeefDetailController.swift in Sources */,
 				199D85C62460D19800C25C55 /* BFAuthentication.swift in Sources */,
 				1977F4D7246B62C70005BA22 /* PagerView.swift in Sources */,
 				19457FF42485BD9000BDC210 /* HostController.swift in Sources */,
@@ -537,6 +572,7 @@
 				199D85DE2462023C00C25C55 /* PhoneAuthView.swift in Sources */,
 				19685936245CCAFC00FC9E9B /* InterestsView.swift in Sources */,
 				1977F4D1246B35740005BA22 /* AuthType.swift in Sources */,
+				1980C5162490131600F96C37 /* MessagesView.swift in Sources */,
 				19C4DA6A2473276C00F5893E /* AppReducer.swift in Sources */,
 				1968593C245CDFCD00FC9E9B /* Interest.swift in Sources */,
 			);

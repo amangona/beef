@@ -10,6 +10,10 @@ class User: Codable, Mappable {
     var userData: UserData?
     var interests: [Interest]?
     
+    init(id: String) {
+        self.id = id
+    }
+    
     init(id: String, name: String, username: String) {
         self.id = id
         self.name = name

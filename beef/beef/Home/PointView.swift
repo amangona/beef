@@ -15,49 +15,27 @@ struct PointView: View {
             if point?.side == 1 {
                 Spacer()
             }
-            Text(point?.text ?? "Example point Text")
-            .foregroundColor(.white)
-            .font(.system(size: 12))
-            .padding(20)
-            .background(RoundedCorners(tl: 10, tr: 10, bl: self.point?.side == 0 ? 0 : 10 , br: self.point?.side == 1 ? 0 : 10).fill(Color.blue))
+            ZStack {
+                Text(point?.text ?? "Example point Text")
+                .foregroundColor(.white)
+                .font(.system(size: 12))
+                .padding(20)
+                    .background(Color.gray .opacity(0.4))
+                    
+            }
+            .background(RoundedCorners(tl: 10, tr: 10, bl: self.point?.side == 0 ? 0 : 10 , br: self.point?.side == 1 ? 0 : 10).fill(self.point?.side == 1 ? Color.green : .blue))
+            
             if point?.side == 0 {
                 Spacer()
             }
         }.padding()
-        
+    
     }
 }
 
 struct PointView_Previews: PreviewProvider {
     static var previews: some View {
         PointView()
-    }
-}
-
-struct CornerRadiusStyle: ViewModifier {
-    var radius: CGFloat
-    var corners: UIRectCorner
-
-    struct CornerRadiusShape: Shape {
-
-        var radius = CGFloat.infinity
-        var corners = UIRectCorner.allCorners
-
-        func path(in rect: CGRect) -> Path {
-            let path = UIBezierPath(roundedRect: rect, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
-            return Path(path.cgPath)
-        }
-    }
-
-    func body(content: Content) -> some View {
-        content
-            .clipShape(CornerRadiusShape(radius: radius, corners: corners))
-    }
-}
-
-extension View {
-    func cornerRadius(radius: CGFloat, corners: UIRectCorner) -> some View {
-        ModifiedContent(content: self, modifier: CornerRadiusStyle(radius: radius, corners: corners))
     }
 }
 

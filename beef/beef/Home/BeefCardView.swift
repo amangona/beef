@@ -10,24 +10,23 @@ struct BeefCardView: View {
     
     var body: some View {
         ZStack {
-//            WebImage(url: viewModel.coverImage)
-//            .resizable()
-//            .aspectRatio(contentMode: .fit)
-//            .frame(maxWidth: .infinity)
+
             VStack {
+                Spacer()
                 HStack {
                     Text(viewModel.title)
                         .fontWeight(.medium)
                         .foregroundColor(Color("titleColor"))
-                        .padding([.top, .leading], 16.0)
+                        
                     Spacer()
                 }
+                .padding([.top, .leading], 16.0)
                 PointView(point: viewModel.points[0])
                 PointView(point: viewModel.points[1])
                     Spacer()
             }
         }
-        .frame(width: 343, height: 186)
+//        .frame(width: 343, height: 186)
         .background(RoundedRectangle(cornerRadius: 10).fill(Color.white))
 //        .shadow(color: Color(#colorLiteral(red: 0.6666666865, green: 0.6666666865, blue: 0.6666666865, alpha: 1)).opacity(0.3), radius: 20, x: 0, y: 20)
 //        .animation(.spring(response: 0.5, dampingFraction: 0.6, blendDuration: 0))

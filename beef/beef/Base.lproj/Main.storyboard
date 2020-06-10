@@ -22,5 +22,20 @@
             </objects>
             <point key="canvasLocation" x="151" y="751"/>
         </scene>
+        <!--Beef Detail Controller-->
+        <scene sceneID="Psl-ob-moL">
+            <objects>
+                <viewController id="o8J-VE-cwh" customClass="BeefDetailController" customModule="beef" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZXZ-FK-n3s">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aPY-1o-uzO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xWO-uE-zHd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="997" y="751"/>
+        </scene>
     </scenes>
 </document>
