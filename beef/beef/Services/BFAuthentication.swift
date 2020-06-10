@@ -10,6 +10,16 @@ class BFAuthentication {
     static var shared = BFAuthentication()
     var db = Firestore.firestore()
     
+//    func addAnonymousUser(completion: @escaping ((User) -> ()) {
+//        Auth.auth().signInAnonymously { (authResult, error) in
+//            if error == nil {
+//                let user = User(id: authResult!.user.uid)
+//            } else {
+//                print("😩Error creating user..")
+//            }
+//        }
+//    }
+    
     func createUser(user: User, completion: @escaping ((Bool)-> ())) {
         db.collection("users").document(user.id!).setData(user.toJSON()) { (error) in
             if error != nil {

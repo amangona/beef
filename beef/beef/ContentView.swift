@@ -8,18 +8,19 @@ struct ContentView: View {
 //    @EnvironmentObject var settings: AuthSettings
 //    @ViewBuilder
     var body: some View {
-        WithViewStore(self.store) { viewStore in
-            BFTabView(store: self.store)
-                .sheet(isPresented: viewStore.binding(get: { $0.showAuth
-                }, send: .authenticate), onDismiss: {
-                    if viewStore.showAuth {
-                        // toggles if still showing is there
-                        viewStore.send(.someAction)
-                    }
-                }, content: {
-                    AuthView(viewStore: viewStore)
-                })
-        }
+        BeefCaontactsView()
+//        WithViewStore(self.store) { viewStore in
+//            BFTabView(store: self.store)
+//                .sheet(isPresented: viewStore.binding(get: { $0.showAuth
+//                }, send: .authenticate), onDismiss: {
+//                    if viewStore.showAuth {
+//                        // toggles if still showing is there
+//                        viewStore.send(.someAction)
+//                    }
+//                }, content: {
+//                    AuthView(viewStore: viewStore)
+//                })
+//        }
     }
 }
 
