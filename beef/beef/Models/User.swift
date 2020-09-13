@@ -1,7 +1,7 @@
 import ObjectMapper
 import Firebase
 
-class User: Codable, Mappable {
+class User: Codable, Mappable, Identifiable {
 
     var id: String?
     var name: String?

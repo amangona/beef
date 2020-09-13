@@ -10,9 +10,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-//        if Auth.auth().currentUser == nil {
-//            print("Ther is no user!!")
-//        }
+        if Auth.auth().currentUser == nil {
+            BFAuthentication.shared.addAnonymousUser { (user) in
+                print("added user: ", user.id)
+            }
+        }
 
         return true
     }

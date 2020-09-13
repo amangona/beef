@@ -15,18 +15,18 @@ struct BFTabView: View {
     
     var body: some View {
         TabView {
-            ProfileView(store: store)
-                .tabItem {
-                    Image("profile_tab")
-            }.tag(0)
+//            ProfileView(store: store)
+//                .tabItem {
+//                    Image("profile_tab")
+//            }.tag(0)
             HomeView()
             .tabItem {
                 Image("beef_tab")
-            }.tag(1)
+            }.tag(0)
             MessagesView()
                 .tabItem {
                     Image("messages_tab")
-            }.tag(2)
+            }.tag(1)
         }.background(Color("background"))
     }
 }

@@ -39,7 +39,7 @@ struct MessagesView: View {
                     Image("create_msg").imageScale(.large)
                 }
             )
-                .sheet(isPresented: $show) {                     CreateBeefView(titleText: .constant(""))
+                .sheet(isPresented: $show) {                     CreateBeefView()
             }
         }
     }

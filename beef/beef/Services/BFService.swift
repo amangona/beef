@@ -5,7 +5,15 @@ class BFService {
     static let shared = BFService()
     var db = Firestore.firestore()
     
-    
+    func updateUser(user: User, completion: @escaping ((Bool)-> ())) {
+        db.collection("users").document(user.id!).setData(user.toJSON()) { (error) in
+            if error != nil {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
+    }
     
     func getAllBeefs(completion: @escaping (([Beef]?) -> ())) {
         var beefs: [Beef] = []
